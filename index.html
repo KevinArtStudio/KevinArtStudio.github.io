@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Web Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77aaff 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        footer {
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+            background-color: #333;
+            text-align: center;
+        }
+        .gallery {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+        .gallery-item {
+            flex: 0 0 auto;
+            margin-right: 10px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        @media (max-width: 768px) {
+            .gallery-item {
+                flex: 0 0 50%;
+            }
+        }
+        @media (max-width: 480px) {
+            .gallery-item {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>My Personal Web Page</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="about" class="container" data-aos="fade-up">
+        <h2>About Me</h2>
+        <p>Hello! I am [Your Name], a [Your Profession] with a passion for [Your Interests]. Welcome to my personal website where I showcase my projects and share a bit about myself.</p>
+    </section>
+    <section id="projects" class="container" data-aos="fade-right">
+        <h2>Projects</h2>
+        <p>Here are some of my projects:</p>
+        <ul>
+            <li><a href="https://github.com/username/project1">Project 1</a></li>
+            <li><a href="https://github.com/username/project2">Project 2</a></li>
+        </ul>
+    </section>
+    <section id="gallery" class="container" data-aos="zoom-in">
+        <h2>Gallery</h2>
+        <div class="gallery" id="gallery">
+            <div class="gallery-item">
+                <img src="images/photo1.jpg" alt="Photo 1">
+            </div>
+            <div class="gallery-item">
+                <img src="images/photo2.jpg" alt="Photo 2">
+            </div>
+            <div class="gallery-item">
+                <img src="images/photo3.jpg" alt="Photo 3">
+            </div>
+            <div class="gallery-item">
+                <img src="images/photo4.jpg" alt="Photo 4">
+            </div>
+            <div class="gallery-item">
+                <img src="images/photo5.jpg" alt="Photo 5">
+            </div>
+            <div class="gallery-item">
+                <img src="images/photo6.jpg" alt="Photo 6">
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="container" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>You can reach me at [your email address] or follow me on <a href="https://twitter.com/yourusername">Twitter</a>.</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 My Personal Web Page</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Auto-scroll function for the gallery
+        const gallery = document.getElementById('gallery');
+        let scrollAmount = 0;
+        var scrollStep = 2; // Change this value to adjust scroll speed
+
+        function autoScroll() {
+            scrollAmount += scrollStep;
+            gallery.scrollLeft = scrollAmount;
+            if (scrollAmount >= gallery.scrollWidth - gallery.clientWidth || scrollAmount <= 0) {
+                scrollStep *= -1; // Reverse scroll direction
+            }
+        }
+
+        setInterval(autoScroll, 20); // Adjust interval time to control scroll speed
+    </script>
+</body>
+</html>
