@@ -69,32 +69,36 @@
         
         .gallery {
             display: flex;
-            overflow-x: auto;
-            scroll-behavior: smooth;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
         }
         
         .gallery-item {
-            flex: 0 0 auto;
-            margin-right: 10px;
+            flex: 1 1 calc(33.333% - 20px);
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            overflow: hidden;
         }
         
-        .gallery-item img {
+        .gallery img {
             width: 100%;
             height: auto;
-            display: block;
+            max-width: 100%;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
         }
         
         @media (max-width: 768px) {
             .gallery-item {
-                flex: 0 0 50%;
+                flex: 1 1 calc(50% - 20px);
             }
         }
         
         @media (max-width: 480px) {
             .gallery-item {
-                flex: 0 0 100%;
+                flex: 1 1 100%;
             }
         }
     </style>
@@ -104,12 +108,12 @@
     <header>
         <div class="container">
             <div id="branding">
-                <h1>My Personal Web Page</h1>
+                <h1>Kevin Art Studio</h1>
             </div>
             <nav>
                 <ul>
                     <li><a href="#about">About Me</a></li>
-                    <li><a href="#classes">Projects</a></li>
+                    <li><a href="#classes">classes</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -132,9 +136,9 @@
     <section id="gallery" class="container" data-aos="zoom-in">
         <h2>Gallery</h2>
         <div class="gallery" id="gallery">
-            <div class="gallery-item">
+            <!-- <div class="gallery-item">
                 <img src="images/photo1.jpg" alt="Photo 1">
-            </div>
+            </div> -->
             <div class="gallery-item">
                 <img src="images/photo2.jpg" alt="Photo 2">
             </div>
@@ -162,14 +166,11 @@
             <div class="gallery-item">
                 <img src="images/photo10.jpg" alt="Photo 4">
             </div>
-            <div class="gallery-item">
-                <img src="images/photo11.jpg" alt="Photo 5">
-            </div>
         </div>
     </section>
     <section id="contact" class="container" data-aos="fade-up">
         <h2>Contact</h2>
-        <p>You can reach me at 3064898603@qq.com or follow me on <a href="https://twitter.com/yourusername">Twitter</a>.</p>
+        <p>You can reach me at 3064898603@qq.com or phone 3466323419.</p>
     </section>
     <footer>
         <p>&copy; 2024 My Personal Web Page</p>
