@@ -47,7 +47,15 @@
         }
         
         header #branding {
-            float: left;
+            display: flex;
+            align-items: center;
+        }
+        
+        header #branding .logo {
+            height: 50px;
+            /* Adjust the height as needed */
+            margin-right: 15px;
+            /* Space between logo and text */
         }
         
         header #branding h1 {
@@ -108,6 +116,7 @@
     <header>
         <div class="container">
             <div id="branding">
+                <img src="images/logo.png" alt="Kevin Art Studio Logo" class="logo">
                 <h1>Kevin Art Studio</h1>
             </div>
             <nav>
