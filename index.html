@@ -8,144 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        
-        header {
-            background: linear-gradient(90deg, #004e92, #000428);
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #e91e63 3px solid;
-        }
-        
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-        }
-        
-        header ul {
-            padding: 0;
-            list-style: none;
-        }
-        
-        header li {
-            display: inline;
-            padding: 0 20px 0 20px;
-        }
-        
-        header #branding {
-            display: flex;
-            align-items: center;
-        }
-        
-        header #branding .logo {
-            height: 50px;
-            margin-right: 15px;
-        }
-        
-        header #branding h1 {
-            margin: 0;
-        }
-        
-        header nav {
-            float: right;
-            margin-top: 10px;
-        }
-        
-        header a:hover {
-            color: #e91e63;
-        }
-        
-        footer {
-            padding: 20px;
-            margin-top: 20px;
-            color: #fff;
-            background-color: #000428;
-            text-align: center;
-        }
-        
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-        
-        .gallery-item {
-            flex: 1 1 calc(33.333% - 20px);
-            box-sizing: border-box;
-            margin-bottom: 20px;
-            overflow: hidden;
-        }
-        
-        .gallery img {
-            width: 100%;
-            height: auto;
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            object-fit: cover;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        
-        @media (max-width: 768px) {
-            .gallery-item {
-                flex: 1 1 calc(50% - 20px);
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .gallery-item {
-                flex: 1 1 100%;
-            }
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #e91e63;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            text-align: center;
-            transition: background-color 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: #d81b60;
-        }
-        
-        section h2 {
-            color: #004e92;
-        }
-        
-        section p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -167,7 +30,7 @@
     </header>
     <section id="about" class="container" data-aos="fade-up">
         <h2>About Me</h2>
-        <p>Hello! I am Kevin, a cartoonist with a passion for cartoon. I study at the Shanghai Academy of Fine Arts. Welcome to my website where I showcase my projects and share a bit about myself! I won second place in "The World Dove of Peace" competition.</p>
+        <p>Hello! I am Kevin, a cartoonist with a passion for cartoons. I study at the Shanghai Academy of Fine Arts. Welcome to my website where I showcase my projects and share a bit about myself! I won second place in "The World Dove of Peace" competition.</p>
     </section>
     <section id="classes" class="container" data-aos="fade-right">
         <h2>Classes</h2>
@@ -230,15 +93,56 @@
     </section>
     <section id="contact" class="container" data-aos="fade-up">
         <h2>Contact</h2>
-        <p>You can reach me at <a href="mailto:3064898603@qq.com" class="btn">3064898603@qq.com</a> on TikTok: <a href="https://www.tiktok.com/@kevin.miao0" class="btn" target="_blank">@kevin.miao0</a> or phone <a href="tel:+13466323419" class="btn">346-632-3419</a></p>
+        <p>You can reach me at 3064898603@qq.com, TikTok: kevin.miao0, or phone 3466323419.</p>
     </section>
     <footer>
         <p>&copy; 2024 Kevin Art Studio</p>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" title="Go to top">Top</button>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     <script>
         AOS.init();
+
+        // Auto-scroll function for the gallery
+        const gallery = document.getElementById('gallery');
+        let scrollAmount = 0;
+        var scrollStep = 2; // Change this value to adjust scroll speed
+
+        function autoScroll() {
+            scrollAmount += scrollStep;
+            gallery.scrollLeft = scrollAmount;
+            if (scrollAmount >= gallery.scrollWidth - gallery.clientWidth || scrollAmount <= 0) {
+                scrollStep *= -1; // Reverse scroll direction
+            }
+        }
+
+        setInterval(autoScroll, 20); // Adjust interval time to control scroll speed
+
+        // Scroll to Top Button
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     </script>
 </body>
 
