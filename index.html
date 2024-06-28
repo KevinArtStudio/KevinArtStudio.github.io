@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kevin Art Studio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -14,7 +15,6 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
-            scroll-behavior: smooth;
         }
         
         .container {
@@ -24,11 +24,11 @@
         }
         
         header {
-            background: #333;
+            background: linear-gradient(90deg, #004e92, #000428);
             color: #fff;
             padding-top: 30px;
             min-height: 70px;
-            border-bottom: #77aaff 3px solid;
+            border-bottom: #e91e63 3px solid;
         }
         
         header a {
@@ -55,9 +55,7 @@
         
         header #branding .logo {
             height: 50px;
-            /* Adjust the height as needed */
             margin-right: 15px;
-            /* Space between logo and text */
         }
         
         header #branding h1 {
@@ -69,11 +67,15 @@
             margin-top: 10px;
         }
         
+        header a:hover {
+            color: #e91e63;
+        }
+        
         footer {
             padding: 20px;
             margin-top: 20px;
             color: #fff;
-            background-color: #333;
+            background-color: #000428;
             text-align: center;
         }
         
@@ -98,6 +100,12 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
         
         @media (max-width: 768px) {
@@ -110,6 +118,32 @@
             .gallery-item {
                 flex: 1 1 100%;
             }
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #e91e63;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #d81b60;
+        }
+        
+        section h2 {
+            color: #004e92;
+        }
+        
+        section p {
+            font-size: 18px;
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -133,92 +167,78 @@
     </header>
     <section id="about" class="container" data-aos="fade-up">
         <h2>About Me</h2>
-        <p>hello! I am Kevin, a cartoonist with a passion for cartoon. I am study under from Shanghai Academy of Fine Arts, Welcome to my website where I showcase my projects and share a bit about myself! I got the second of "The world dove of peace". </p>
+        <p>Hello! I am Kevin, a cartoonist with a passion for cartoon. I study at the Shanghai Academy of Fine Arts. Welcome to my website where I showcase my projects and share a bit about myself! I won second place in "The World Dove of Peace" competition.</p>
     </section>
     <section id="classes" class="container" data-aos="fade-right">
         <h2>Classes</h2>
         <p>Here are some of my classes:</p>
         <ul>
-            <p>$100 for one class, buy five get one free and one frame for student first painting</p>
-            <p>$120 for one class, buy twenty get three free and a box of Oil painting stick and one frame for student first painting</p>
-            <p>School day is for Saturday and Sunday a class is 45 minute, Summertime can be Monday to Saturday a class is 45 minute </p>
+            <li>$100 for one class, buy five get one free and one frame for the student's first painting</li>
+            <li>$120 for one class, buy twenty get three free, a box of oil painting sticks, and one frame for the student's first painting</li>
+            <li>School days are on Saturday and Sunday, each class is 45 minutes. In summer, classes are from Monday to Saturday, each class is 45 minutes.</li>
         </ul>
     </section>
     <section id="gallery" class="container" data-aos="zoom-in">
         <h2>Gallery</h2>
         <div class="gallery" id="gallery">
-            <div class="gallery-item">
+            <a href="images/photo1.jpg" class="gallery-item" data-lightbox="gallery" data-aos="fade-up">
                 <img src="images/photo1.jpg" alt="Photo 1">
-            </div>
-            <div class="gallery-item">
+            </a>
+            <a href="images/photo2.jpg" class="gallery-item" data-lightbox="gallery" data-aos="fade-up" data-aos-delay="100">
                 <img src="images/photo2.jpg" alt="Photo 2">
-            </div>
-            <div class="gallery-item">
+            </a>
+            <a href="images/photo3.jpg" class="gallery-item" data-lightbox="gallery" data-aos="fade-up" data-aos-delay="200">
                 <img src="images/photo3.jpg" alt="Photo 3">
-            </div>
-            <div class="gallery-item">
+            </a>
+            <a href="images/photo4.jpg" class="gallery-item" data-lightbox="gallery" data-aos="fade-up" data-aos-delay="300">
                 <img src="images/photo4.jpg" alt="Photo 4">
-            </div>
-            <div class="gallery-item">
+            </a>
+            <a href="images/photo5.jpg" class="gallery-item" data-lightbox="gallery" data-aos="fade-up" data-aos-delay="400">
                 <img src="images/photo5.jpg" alt="Photo 5">
-            </div>
-            <div class="gallery-item">
+            </a>
+            <a href="images/photo6.jpg" class="gallery-item" data-lightbox="gallery" data-aos="fade-up" data-aos-delay="500">
                 <img src="images/photo6.jpg" alt="Photo 6">
-            </div>
-            <div class="gallery-item">
+            </a>
+            <a href="images/photo66.jpg" class="gallery-item" data-lightbox="gallery" data-aos="fade-up" data-aos-delay="600">
                 <img src="images/photo66.jpg" alt="Photo 66">
-            </div>
-            <div class="gallery-item">
+            </a>
+            <a href="images/photo7.jpg" class="gallery-item" data-lightbox="gallery" data-aos="fade-up" data-aos-delay="700">
                 <img src="images/photo7.jpg" alt="Photo 7">
-            </div>
-            <div class="gallery-item">
+            </a>
+            <a href="images/photo8.jpg" class="gallery-item" data-lightbox="gallery" data-aos="fade-up" data-aos-delay="800">
                 <img src="images/photo8.jpg" alt="Photo 8">
-            </div>
-            <div class="gallery-item">
+            </a>
+            <a href="images/photo9.jpg" class="gallery-item" data-lightbox="gallery" data-aos="fade-up" data-aos-delay="900">
                 <img src="images/photo9.jpg" alt="Photo 9">
-            </div>
-            <div class="gallery-item">
+            </a>
+            <a href="images/photo99.jpg" class="gallery-item" data-lightbox="gallery" data-aos="fade-up" data-aos-delay="1000">
                 <img src="images/photo99.jpg" alt="Photo 99">
-            </div>
-            <div class="gallery-item">
+            </a>
+            <a href="images/photo10.jpg" class="gallery-item" data-lightbox="gallery" data-aos="fade-up" data-aos-delay="1100">
                 <img src="images/photo10.jpg" alt="Photo 10">
-            </div>
-            <div class="gallery-item">
+            </a>
+            <a href="images/photo11.jpg" class="gallery-item" data-lightbox="gallery" data-aos="fade-up" data-aos-delay="1200">
                 <img src="images/photo11.jpg" alt="Photo 11">
-            </div>
-            <div class="gallery-item">
+            </a>
+            <a href="images/photo12.jpg" class="gallery-item" data-lightbox="gallery" data-aos="fade-up" data-aos-delay="1300">
                 <img src="images/photo12.jpg" alt="Photo 12">
-            </div>
-            <div class="gallery-item">
+            </a>
+            <a href="images/photo13.jpg" class="gallery-item" data-lightbox="gallery" data-aos="fade-up" data-aos-delay="1400">
                 <img src="images/photo13.jpg" alt="Photo 13">
-            </div>
+            </a>
         </div>
     </section>
     <section id="contact" class="container" data-aos="fade-up">
         <h2>Contact</h2>
-        <p>You can reach me at 3064898603@qq.com, tiktok: kevin.miao0 or phone 3466323419.</p>
+        <p>You can reach me at <a href="mailto:3064898603@qq.com" class="btn">3064898603@qq.com</a> on TikTok: <a href="https://www.tiktok.com/@kevin.miao0" class="btn" target="_blank">@kevin.miao0</a> or phone <a href="tel:+13466323419" class="btn">346-632-3419</a></p>
     </section>
     <footer>
         <p>&copy; 2024 Kevin Art Studio</p>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
     <script>
         AOS.init();
-
-        // Auto-scroll function for the gallery
-        const gallery = document.getElementById('gallery');
-        let scrollAmount = 0;
-        var scrollStep = 2; // Change this value to adjust scroll speed
-
-        function autoScroll() {
-            scrollAmount += scrollStep;
-            gallery.scrollLeft = scrollAmount;
-            if (scrollAmount >= gallery.scrollWidth - gallery.clientWidth || scrollAmount <= 0) {
-                scrollStep *= -1; // Reverse scroll direction
-            }
-        }
-
-        setInterval(autoScroll, 20); // Adjust interval time to control scroll speed
     </script>
 </body>
 
